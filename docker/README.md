@@ -118,6 +118,15 @@ curl -X POST -H "Content-Type: application/json" \
 
 ---
 
+## Additional Resources
+
+To better understand the deployment process and how to maximize Phi-3’s capabilities, check out the following resources:
+
+- **Blog**: Learn the complete setup and the benefits of small LLMs in this detailed [Medium blog post](https://medium.com/@neeraztiwari/phi-3-deploying-compact-ai-models-for-real-world-applications-8e03cdcac5cd).
+- **YouTube Video**: Watch the step-by-step guide on [YouTube](https://example-youtube-link.com).
+
+---
+
 ## Responsible AI Practices
 
 Phi-3 is a highly capable model, but like all large language models, it has inherent limitations and risks:
