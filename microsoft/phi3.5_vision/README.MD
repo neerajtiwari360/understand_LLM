@@ -76,3 +76,12 @@ You can find the `<container_id>` by running `docker ps` to list running contain
 - **Container Not Starting**:
   - Make sure Docker is installed and running properly on your machine.
   - Check if port `4050` is available on your machine, and ensure no other services are using it.
+
+---
+
+## Additional Resources
+
+To better understand the deployment process and how to maximize Phi-3’s capabilities, check out the following resources:
+
+- **Blog**: Learn the complete setup and the benefits of small LLMs in this detailed [Medium blog post](https://medium.com/@neeraztiwari/exploring-microsofts-phi-3-5-419304cbc008).
+- **YouTube Video**: Watch the step-by-step guide on [YouTube](https://youtu.be/KnMdpNrtViE?si=5d5mdV0Jj5tTk4Oh).
