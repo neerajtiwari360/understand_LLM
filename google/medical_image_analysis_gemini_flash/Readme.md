@@ -1,1 +1,0 @@
-Collect the Gemini API : https://aistudio.google.com/apikey

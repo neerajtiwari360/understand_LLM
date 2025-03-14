@@ -1,7 +1,0 @@
-streamlit
-yfinance
-pillow
-phidata
-duckduckgo-search
-google-generativeai
-openai
