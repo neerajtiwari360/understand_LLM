@@ -3,6 +3,11 @@ import sys
 import os
 import readline
 
+# ANSI color codes for colored terminal output
+BLUE = '\033[94m'
+YELLOW = '\033[93m'
+RESET = '\033[0m'
+
 # Suppress verbose output from llama_cpp
 sys.stdout = open(os.devnull, 'w')
 sys.stderr = open(os.devnull, 'w')
@@ -25,9 +30,9 @@ system_message = "You are a helpful assistant. Keep your responses short and con
 
 # Loop for continuous interaction
 while True:
-    # Get user input
-    prompt = input("You: ")
-    
+    # Get user input with yellow color
+    prompt = input(f"{YELLOW}You: {RESET}")
+
     # Exit the loop if the user types "exit"
     if prompt.lower() == "exit":
         print("Exiting the chat. Goodbye!")
@@ -40,20 +45,24 @@ while True:
     sys.stdout = open(os.devnull, 'w')
     sys.stderr = open(os.devnull, 'w')
 
-    # Generate a response
-    output = llm(
+    # Generate a streaming response
+    stream = llm(
         full_prompt,  # Prompt
         max_tokens=512,  # Generate up to 512 tokens
         stop=["</s>"],   # Stop token
-        echo=False       # Do not echo the prompt
+        echo=False,      # Do not echo the prompt
+        stream=True      # Enable streaming
     )
 
     # Restore stdout and stderr
     sys.stdout = sys.__stdout__
     sys.stderr = sys.__stderr__
 
-    # Extract the generated text
-    generated_text = output["choices"][0]["text"]
-    
-    # Print the assistant's response
-    print("Assistant:", generated_text.strip())
+    # Print Assistant response inline
+    print(f"{BLUE}Assistant:{RESET} ", end="", flush=True)
+    # Stream and print each token as it's generated
+    for output in stream:
+        token = output["choices"][0]["text"].replace("\n", " ")
+        print(token, end="", flush=True)
+
+    print("\n")  # Print newline after response completion
