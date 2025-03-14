@@ -1,6 +1,7 @@
 from llama_cpp import Llama
 import sys
 import os
+import readline
 
 # Suppress verbose output from llama_cpp
 sys.stdout = open(os.devnull, 'w')
